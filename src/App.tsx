@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {MantineProvider} from "@mantine/core";
+import CreateElection from "./modules/admin/components/CreateElection";
+import LoginForm from "./modules/auth/components/LoginForm";
+import ElectionList from "./modules/shared/lists/ElectionList";
+import ElectionPage from "./modules/shared/pages/ElectionPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    return (
+        <MantineProvider
+            theme={{
+                fontFamily: "Ubuntu, sans-serif",
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <ElectionPage/>
+        </MantineProvider>
+    );
 }
 
 export default App;
