@@ -4,7 +4,7 @@ import VotingCard from "./components/VotingCard";
 export default function ElectionPage() {
 
     const election = {
-        id: "1",
+        id: "some-id",
         name: "Election 1",
         candidates: [
             {

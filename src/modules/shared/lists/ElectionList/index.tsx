@@ -1,18 +1,21 @@
 import {Container, Divider, Table} from "@mantine/core";
 import ActionMenu from "./components/ActionMenu";
+import {useNavigate} from "react-router-dom";
 
 
 export default function ElectionList() {
-
+    const navigate = useNavigate();
 
     const elections = [
         {
+            id: "some-id",
             name: "Election 1",
             date: "2020-01-01",
             status: "Active",
             votes: 20
         },
         {
+            id: "some-id-2",
             name: "Election 2",
             date: "2020-01-01",
             status: "Active",
@@ -33,6 +36,7 @@ export default function ElectionList() {
     const onView = (id: string) => (event: any) => {
         event.stopPropagation();
         console.log("view", id)
+        navigate(`/elections/${id}`)
     }
 
 
@@ -54,12 +58,12 @@ export default function ElectionList() {
                 {elections?.map((election, index) => {
                     return (
                         <tr key={index}>
-                            <td onClick={onView(election.name)}>{election.name}</td>
-                            <td onClick={onView(election.name)}>{election.date}</td>
-                            <td onClick={onView(election.name)}>{election.status}</td>
-                            <td onClick={onView(election.name)}>{election.votes}</td>
+                            <td onClick={onView(election.id)}>{election.name}</td>
+                            <td onClick={onView(election.id)}>{election.date}</td>
+                            <td onClick={onView(election.id)}>{election.status}</td>
+                            <td onClick={onView(election.id)}>{election.votes}</td>
                             <td>
-                                <ActionMenu onDelete={onDelete(election.name)} onEdit={onEdit(election.name)}/>
+                                <ActionMenu onDelete={onDelete(election.id)} onEdit={onEdit(election.id)}/>
                             </td>
                         </tr>
                     )

@@ -2,13 +2,17 @@ import {Button, Center, Container, Grid, Space, TextInput} from "@mantine/core";
 import {useForm, FormProvider} from "react-hook-form";
 import CustomTextInput from "../../shared/forms/CustomTextInput";
 import CustomPasswordInput from "../../shared/forms/CustomPasswordInput";
+import {useNavigate} from "react-router-dom";
 
 export default function LoginForm() {
     const form = useForm();
 
+    const navigate = useNavigate();
+
 
     const onSubmit = (data: any) => {
         console.log(data);
+        navigate("/elections")
     };
 
     return (
