@@ -1,6 +1,7 @@
 import React from 'react';
 import {MantineProvider} from "@mantine/core";
 import CreateElection from "./modules/admin/components/CreateElection";
+import LoginForm from "./modules/auth/components/LoginForm";
 
 function App() {
     return (
@@ -9,7 +10,7 @@ function App() {
                 fontFamily: "Ubuntu, sans-serif",
             }}
         >
-            <CreateElection/>
+            <LoginForm/>
         </MantineProvider>
     );
 }
